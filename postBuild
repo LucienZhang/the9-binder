@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Unpack and install the kernel
+curl -L https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip > ijava-kernel.zip
+unzip ijava-kernel.zip -d ijava-kernel \
+  && cd ijava-kernel \
+  && python install.py --sys-prefix
+
+# Cleanup
+cd ..
+rm ijava-kernel.zip
+rm -r ijava-kernel
